@@ -86,7 +86,7 @@ char	*read_file(int fd, char *res)
 		buffer[byte_read] = 0;
 		res = ft_free(res, buffer);
 		if (ft_strchr(buffer, '\n'))
-			break ;
+			byte_read = -1;
 	}
 	free(buffer);
 	return (res);

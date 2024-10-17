@@ -40,14 +40,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (res);
 }
 
-char	*ft_strchr(const char *string, int searchedChar )
+char	*ft_strchr(const char *string, int c )
 {
 	char	*str;
 
 	str = (char *)string;
-	while (*str != searchedChar && *str != 0)
+	while (*str != c && *str != 0)
 		str++;
-	if (*str == searchedChar)
+	if (*str == c)
 		return (str);
 	else
 		return (NULL);
@@ -67,23 +67,23 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-void	*ft_calloc(size_t elementCount, size_t elementSize)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*res;
 
-	res = malloc(elementSize * elementCount);
+	res = malloc(size * nmemb);
 	if (!res)
 		return (NULL);
-	ft_bzero(res, elementSize * elementCount);
+	ft_bzero(res, size * nmemb);
 	return (res);
 }
 
-size_t	ft_strlen(const char *theString)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (theString[i])
+	while (s[i])
 		i++;
 	return (i);
 }
