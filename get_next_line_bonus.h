@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeboose <adeboose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 13:08:34 by adeboose          #+#    #+#             */
-/*   Updated: 2024/10/21 13:08:35 by adeboose         ###   ########.fr       */
+/*   Created: 2024/10/21 13:08:19 by adeboose          #+#    #+#             */
+/*   Updated: 2024/10/21 13:08:20 by adeboose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
+# include <unistd.h>
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE

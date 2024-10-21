@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeboose <adeboose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 13:08:30 by adeboose          #+#    #+#             */
-/*   Updated: 2024/10/21 13:08:32 by adeboose         ###   ########.fr       */
+/*   Created: 2024/10/21 13:08:12 by adeboose          #+#    #+#             */
+/*   Updated: 2024/10/21 13:08:14 by adeboose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ char	*extract_line_from_buffer(char **remainder, char **tmp)
 
 char	*get_next_line(int fd)
 {
-	static char	*remainder = NULL;
+	static char	*remainder[1024];
 	char		*tmp;
 	char		*line;
 
@@ -115,12 +115,12 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = NULL;
 	tmp = NULL;
-	read_file(fd, &remainder, &tmp);
-	if (remainder != NULL && *remainder != '\0')
-		line = extract_line_from_buffer(&remainder, &tmp);
+	read_file(fd, &remainder[fd], &tmp);
+	if (remainder[fd] != NULL && *remainder[fd] != '\0')
+		line = extract_line_from_buffer(&remainder[fd], &tmp);
 	if (!line || *line == '\0')
 	{
-		ft_free_strs(&remainder, &line, &tmp);
+		ft_free_strs(&remainder[fd], &line, &tmp);
 		return (NULL);
 	}
 	return (line);
