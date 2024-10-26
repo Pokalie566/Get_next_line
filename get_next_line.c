@@ -6,11 +6,11 @@
 /*   By: adeboose <adeboose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 13:08:30 by adeboose          #+#    #+#             */
-/*   Updated: 2024/10/21 13:08:32 by adeboose         ###   ########.fr       */
+/*   Updated: 2024/10/23 11:41:50 by adeboose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 char	*before_newline(const char *s)
 {
